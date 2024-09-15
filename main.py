@@ -1,4 +1,11 @@
-from mylib.lib import *
+from mylib.lib import (
+    load_dataset,
+    grab_mean,
+    grab_median,
+    grab_std,
+    create_bar,
+    create_line
+)
 
 
 def g_describe(dataset):
