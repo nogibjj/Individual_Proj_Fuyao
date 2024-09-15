@@ -41,7 +41,7 @@ def create_bar(df_year, jupy=False):
     plt.ylabel('Total Births')
     plt.xticks(rotation=45)
     plt.savefig('birth_bar.png', dpi=300)
-    if jupy == True:
+    if jupy is True:
         plt.show()
 
 
@@ -54,5 +54,5 @@ def create_line(df_year, jupy=False):
     plt.xlabel('Year')
     plt.ylabel('Number of Births')
     plt.savefig('birth_lineplot.png', dpi=300)
-    if jupy == True:
+    if jupy is True:
         plt.show()
