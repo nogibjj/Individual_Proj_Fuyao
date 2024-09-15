@@ -22,4 +22,4 @@ jobs:
       - name: deploy
         run: make deploy
       - name: generate_and_push
-        run: generate_and_push
+        run: make generate_and_push
