@@ -10,14 +10,11 @@ test:
 lint:
 	ruff check *.py mylib/*.py test_*.py *.ipynb
 
-container-lint:
-	docker run --rm -i hadolint/hadolint < Dockerfile
-
-refactor: format lint
+deploy:
 
 generate_and_push:
 	python test_main.py
-	
+
 	@if [ -n "$$(git status --porcelain)" ]; then \
 		git config --local user.email "action@github.com"; \
 		git config --local user.name "GitHub Action"; \
@@ -29,4 +26,4 @@ generate_and_push:
 	fi
 
 
-all: install format lint test
+all: install format lint test deploy
