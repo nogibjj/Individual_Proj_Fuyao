@@ -1,42 +1,37 @@
-from main import generate_dataframe, generate_describe, \
-    generate_average_temperature, generate_heatmap, generate_markdown
+from main import (
+    g_describe,
+    data_manage,
+    general_viz_combined,
+    save_to_md
+)
 
 
-# Specify the file path and the sheet name
-file_path = 'Durham-Observatory-monthly-mean-temperature.xlsx'
-sheet_name = 'Durham monthly Tmean'
+dataset = "https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_1994-2003_CDC_NCHS.csv"
 
 
-def test_generate_dataframe():
-    df = generate_dataframe(file_path, sheet_name)
-    assert df.iloc[0, 0] == 1795
+def test_g_describe():
+    describe = g_describe(dataset)
+    # print(describe)
+    assert describe.shape == (8, 2)
 
 
-def test_generate_describe():
-    df = generate_dataframe(file_path, sheet_name)
-    stats_df = generate_describe(df)
-    assert round(stats_df.iloc[0, 0], 2) == 2.89
+def test_data_manage():
+    stats_df = data_manage(dataset)
+    # print(stats_df)
+    assert stats_df['name'] == 'U.S. briths'
 
 
-def test_generate_average_temperature():
-    df = generate_dataframe(file_path, sheet_name)
-    generate_average_temperature(df)
+def test_general_viz_combined():
+    df = g_describe(dataset)
+    general_viz_combined(df)
 
 
-def test_generate_heatmap():
-    df = generate_dataframe(file_path, sheet_name)
-    generate_heatmap(df)
-
-
-def test_generate_markdown():
-    df = generate_dataframe(file_path, sheet_name)
-    stats_df = generate_describe(df)
-    generate_markdown(stats_df)
+def test_save_to_md():
+    save_to_md(dataset)
 
 
 if __name__ == "__main__":
-    test_generate_dataframe()
-    test_generate_describe()
-    test_generate_average_temperature()
-    test_generate_heatmap()
-    test_generate_markdown()
+    test_g_describe()
+    test_data_manage()
+    test_general_viz_combined()
+    test_save_to_md()
