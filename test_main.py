@@ -1,9 +1,4 @@
-from main import (
-    g_describe,
-    data_manage,
-    general_viz_combined,
-    save_to_md
-)
+from main import g_describe, data_manage, general_viz_combined, save_to_md
 
 
 dataset = "https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_1994-2003_CDC_NCHS.csv"
@@ -18,7 +13,7 @@ def test_g_describe():
 def test_data_manage():
     stats_df = data_manage(dataset)
     # print(stats_df)
-    assert stats_df['name'] == 'U.S. briths'
+    assert stats_df["name"] == "U.S. briths"
 
 
 def test_general_viz_combined():

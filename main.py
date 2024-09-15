@@ -4,7 +4,7 @@ from mylib.lib import (
     grab_median,
     grab_std,
     create_bar,
-    create_line
+    create_line,
 )
 
 
@@ -20,7 +20,7 @@ def data_manage(dataset):
     median = grab_median(df)
     std = grab_std(df)
     stats_df = {
-        "name": 'U.S. briths',
+        "name": "U.S. briths",
         "mean": mean,
         "median": median,
         "std": std,
@@ -37,17 +37,17 @@ def general_viz_combined(df):
 def save_to_md(dataset):
     df = load_dataset(dataset)
     stats_df = data_manage(dataset)
-    
+
     general_viz_combined(df)
-    
-    with open('result.md', 'w', encoding='utf-8') as f:
+
+    with open("result.md", "w", encoding="utf-8") as f:
         # Write the title
         f.write("# U.S. Births\n\n")
 
         # Write the summary statistics as tables
         f.write("## Summary Statistics\n")
         markdown_table = (
-            f"| Name       | {stats_df['name']} |\n" 
+            f"| Name       | {stats_df['name']} |\n"
             "|------------|------------|\n"
             f"| Mean       | {stats_df['mean']} |\n"
             f"| Median     | {stats_df['median']} |\n"

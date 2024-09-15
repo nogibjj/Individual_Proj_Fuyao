@@ -4,7 +4,7 @@ from mylib.lib import (
     grab_median,
     grab_std,
     create_bar,
-    create_line
+    create_line,
 )
 
 
@@ -13,25 +13,25 @@ dataset = "https://raw.githubusercontent.com/fivethirtyeight/data/master/births/
 
 def test_load_dataset():
     df = load_dataset(dataset)
-    assert df.shape == (10,2)
+    assert df.shape == (10, 2)
 
 
 def test_grab_mean():
     df_year = load_dataset(dataset)
     mean = grab_mean(df_year)
-    assert mean == df_year.describe().iloc[1,1]
+    assert mean == df_year.describe().iloc[1, 1]
 
 
 def test_grab_median():
     df_year = load_dataset(dataset)
     median = grab_median(df_year)
-    assert median == df_year.describe().iloc[5,1]
+    assert median == df_year.describe().iloc[5, 1]
 
 
 def test_grab_std():
     df_year = load_dataset(dataset)
     std = grab_std(df_year)
-    assert std == df_year.describe().iloc[2,1]
+    assert std == df_year.describe().iloc[2, 1]
 
 
 def test_create_bar():
