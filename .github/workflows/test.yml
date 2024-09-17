@@ -1,25 +1,21 @@
-name: CI
-on: 
-  push: 
+name: Test
+
+on:
+  push:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
 
-jobs: 
-  build: 
+jobs:
+  build:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - uses: actions/checkout@v3
       - name: install packages
-        run: make install 
-      - name: format
-        run: make format
-      - name: lint
-        run: make lint
+        run: make install
       - name: test
         run: make test
-      - name: deploy
-        run: make deploy
-      - name: generate_and_push
+      - name: generate
         run: make generate_and_push
+    
