@@ -17,8 +17,7 @@ def test_data_manage():
 
 
 def test_general_viz_combined():
-    df = g_describe(dataset)
-    general_viz_combined(df)
+    general_viz_combined(dataset)
 
 
 def test_save_to_md():

@@ -8,8 +8,7 @@
 ### Author name: Fuyao Li
 
 ## Overview
-This project analyzes the total number of births in the United States for each year from 1994 to 2003. The dataset used for this analysis is sourced from the [FiveThirtyEight dataset](https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_1994-2003_CDC_NCHS.csv)
- dataset, which contains detailed information on daily births during this period.
+This project analyzes the total number of births in the United States for each year from 1994 to 2003. The dataset used for this analysis is sourced from the [FiveThirtyEight dataset](https://raw.githubusercontent.com/fivethirtyeight/data/master/births/US_births_1994-2003_CDC_NCHS.csv) dataset, which contains detailed information on daily births during this period.
 
 
 ## Set up
