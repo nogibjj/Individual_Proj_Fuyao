@@ -32,3 +32,6 @@ pip install -r requirements.txt
 
 2. Line plot
 ![line](birth_lineplot.png)
+
+## Presentation Video
+The video is on the Youtube. The link is https://www.youtube.com/watch?v=dpDIYzwth2M.
